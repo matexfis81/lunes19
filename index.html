@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Mini MatFis</title>
+  <!-- Librería de iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Logo multicolor */
+    .multicolor { 
+      font-size: 200px; 
+      font-weight: 700; 
+      margin-bottom: 30px;
+    }
+    .c1 { color: #4285F4; } /* azul */
+    .c2 { color: #DB4437; } /* rojo */
+    .c3 { color: #F4B400; } /* amarillo */
+    .c4 { color: #0F9D58; } /* verde */
+
+    /* Contenedor de barra de búsqueda + botones */
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Barra de búsqueda */
+    .search-box {
+      width: 500px;
+      max-width: 90%;
+      padding: 12px 20px;
+      border: 1px solid #dcdcdc;
+      border-radius: 25px;
+      font-size: 18px;
+      outline: none;
+      box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+      transition: all 0.2s ease;
+    }
+    .search-box:focus {
+      border-color: #4285F4;
+      box-shadow: 0 1px 8px rgba(66,133,244,0.5);
+    }
+
+    /* Botones */
+    .search-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-button {
+      padding: 10px 20px;
+      font-size: 15px;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      background: #f8f9fa;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .search-button:hover {
+      background: #f1f3f4;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    /* Contenedor de iconos */
+    .icon-links {
+      margin-top: 40px;
+      display: flex;
+      gap: 25px;
+    }
+
+    .icon-links a i {
+      font-size: 40px;
+      color: #555;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .icon-links a i:hover {
+      color: #4285F4;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <h1 class="multicolor">
+    <span class="c1">M</span>
+    <span class="c2">a</span>
+    <span class="c3">t</span>
+    <span class="c1">F</span>
+    <span class="c4">i</span>
+    <span class="c2">s</span>
+  </h1>
+
+  <!-- Barra de búsqueda + botones -->
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="Escribe aquí...">
+    <div class="search-buttons">
+      <button class="search-button" onclick="buscar()">Matemática</button>
+      <button class="search-button">Física</button>
+    </div>
+  </div>
+
+  <!-- Iconos de enlaces -->
+  <div class="icon-links">
+    <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+
+  <script>
+    // Función simple para buscar en Google
+    function buscar() {
+      const query = document.querySelector('.search-box').value;
+      if (query) {
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+      }
+    }
+  </script>
+
+</body>
+</html>
